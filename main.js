@@ -3,10 +3,6 @@ const lineY = document.querySelector(".line-y");
 const imgTarget = document.querySelector(".target");
 const textTag = document.querySelector(".tag");
 
-function textContent(x, y) {
-    textTag.innerHTML = `${x}, ${y}`;
-}
-
 document.addEventListener("mousemove", (event) => {
     const x = event.clientX;
     const y = event.clientY;
@@ -16,10 +12,19 @@ document.addEventListener("mousemove", (event) => {
     imgTarget.style.left = `${x}px`;
     imgTarget.style.top = `${y}px`;
 
-    textContent(
-        (textTag.style.left = `${x}px`),
-        (textTag.style.top = `${y}px`)
-    );
+    textTag.style.left = `${x}px`;
+    textTag.style.top = `${y}px`;
+    textTag.innerHTML = `${x}px, ${y}px`;
+
+    // textContent(
+    //     (textTag.style.left = `${x}px`),
+    //     (textTag.style.top = `${y}px`)
+    // );
 });
 
-textContent(0, 0);
+// callback 함수를 이용하는 방법도 있습니다.
+// function textContent(x, y) {
+//     textTag.innerHTML = `${x}, ${y}`;
+// }
+
+// textContent(0, 0);
