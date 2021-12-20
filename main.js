@@ -11,6 +11,12 @@ const textTag = document.querySelector(".tag");
 // addEventListener('load', () => {})를 이용한다면 window가 load된 후에 이미지의 너비, 높이값을 불러오며
 // 마우스오버의 이벤트 또한 load가된 후에 불러와지기 때문에 이미지가 가운데를 벗어나지 않습니다.
 
+// 성능 최적화를 확인해 보고 싶다면
+// performance창에서 screen을 통해 직접 사용하는 모습을 찍어본다.
+// 코드의 성능이 좋지 않다면 layout shift 경고가 뜬다.
+// performance창에서 command + shfit + p => layout shift 관련 항목을 눌러서 검사해보면
+// layout shift가 지속적으로 화면에 출력되는것을 볼 수 있다.
+
 addEventListener("load", () => {
     const targetRect = imgTarget.getBoundingClientRect();
     const targetHalfWidth = targetRect.width / 2;
